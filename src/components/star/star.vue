@@ -1,0 +1,52 @@
+<template>
+  <div class="starbox">
+    <span v-for='(itemClass,index) in itemClasses'
+    :class='itemClass'
+    class='star-item'
+    :key='index'></span>
+  </div>
+</template>
+
+<script>
+const stars = 5
+
+export default {
+  props: {
+    score: {
+      type: Number
+    }
+  },
+  computed: {
+    itemClasses () {
+      const result = []
+      const scroeon = parseInt(this.score)
+      for (let i = 0; i < scroeon; i++) {
+        result.push('star-on')
+      }
+      while (result.length < stars) {
+        result.push('star-off')
+      }
+      return result
+    }
+  }
+}
+</script>
+
+<style lang='less' scoped>
+.starbox {
+  .star-item {
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-right: 22px;
+    background-size: 20px 20px;
+  }
+  .star-on {
+    background-image: url('star_on@2x.png');
+  }
+  .star-off {
+    background-image: url('star_off@2x.png');
+  }
+}
+</style>
