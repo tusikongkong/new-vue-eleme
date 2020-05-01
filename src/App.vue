@@ -67,4 +67,7 @@ export default {
     }
   }
 }
+.cube-scroll-nav-bar {
+    background-color: blue;
+}
 </style>

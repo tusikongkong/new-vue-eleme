@@ -1,6 +1,16 @@
 <template>
   <div class="goodsbox">
-    <div class="menu-wrapper">
+    <cube-scroll-nav
+    :side=true
+    :data='goods'
+    :options='scrollOptions'
+    v-if='goods.length'>
+    <cube-scroll-nav-panel
+    v-for='(good,index) in goods'
+    :label='good.name'
+    :key='index'
+    :title='good.name'>
+    <!-- <div class="menu-wrapper">
       <ul class='menu'>
         <li v-for='(good,index) in goods'
         :key='index'
@@ -12,11 +22,11 @@
           </span>
         </li>
       </ul>
-    </div>
+    </div> -->
     <div class="foods-wrapper">
       <ul>
         <li v-for='(good,index) in goods' :key='index' class='food-list'>
-          <h1 class="title">{{good.name}}</h1>
+          <!-- <h1 class="title">{{good.name}}</h1> -->
           <ul>
             <li v-for='(food,cindex) in good.foods' :key='cindex' class='food-item'>
               <div class="foodicon">
@@ -43,6 +53,8 @@
         </li>
       </ul>
     </div>
+    </cube-scroll-nav-panel>
+    </cube-scroll-nav>
   </div>
 </template>
 
@@ -53,31 +65,39 @@ export default {
       type: Array
     }
   },
+  data () {
+    return {
+      scrollOptions: {
+        click: false,
+        directionLockThreshold: 0
+      }
+    }
+  },
   created () {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
   }
 }
 </script>
 
-<style lang='less' scoped>
+<style lang='less'>
 .goodsbox {
   display: flex;
   position: absolute;
   top: 178px;
   bottom: 46px;
   width: 100%;
-  .menu-wrapper {
+  .cube-scroll-nav-bar {
     overflow: scroll;
     flex: 0 0 80px;
     width: 88px;
     background-color: #f3f5f7;
-    .menu-item {
+    .cube-scroll-nav-bar-item {
       display: table;
       height: 54px;
       width: 56px;
       line-height: 14px;
       border-bottom: 1px solid rgba(7,17,27,0.1);
-      padding: 0 12px;
+      padding: 0;
       .icon {
         display: inline-block;
         width: 12px;
@@ -86,11 +106,12 @@ export default {
         background-repeat: no-repeat;
         vertical-align: top;
       }
-      .text {
+      span {
         display: table-cell;
         width: 56px;
         vertical-align: middle;
         font-size: 12px;
+        text-align: left;
       }
     }
   }
@@ -161,20 +182,30 @@ export default {
   }
 }
 
-.decrease {
-  background-image: url('decrease_3@2x.png');
-}
-.discount {
-  background-image: url('discount_3@2x.png');
-}
-.special {
-  background-image: url('special_3@2x.png');
-}
-.invoice {
-  background-image: url('invoice_3@2x.png');
-}
-.guarantee {
-  background-image: url('guarantee_3@2x.png');
+// .decrease {
+//   background-image: url('decrease_3@2x.png');
+// }
+// .discount {
+//   background-image: url('discount_3@2x.png');
+// }
+// .special {
+//   background-image: url('special_3@2x.png');
+// }
+// .invoice {
+//   background-image: url('invoice_3@2x.png');
+// }
+// .guarantee {
+//   background-image: url('guarantee_3@2x.png');
+// }
+
+.cube-scroll-nav-panel-title {
+    padding-left: 14px;
+    height: 26px;
+    line-height: 26px;
+    border-left: 2px solid #d9dde1;
+    font-size: 12px;
+    color: rgb(147,153,159);
+    background-color: #f3f5f7;
 }
 
 </style>
