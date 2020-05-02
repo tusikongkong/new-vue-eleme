@@ -54,16 +54,24 @@
     </div>
     </cube-scroll-nav-panel>
     </cube-scroll-nav>
+    <shopcart
+    :delivery-price='seller.deliveryPrice'
+    :min-price='seller.minPrice'
+    :selectFoods='selectFoods'></shopcart>
   </div>
 </template>
 
 <script>
 import control from '../control/control.vue'
+import shopcart from '../shopcart/shopcart.vue'
 
 export default {
   props: {
     goods: {
       type: Array
+    },
+    seller: {
+      type: Object
     }
   },
   data () {
@@ -78,12 +86,30 @@ export default {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
   },
   components: {
-    control
+    control,
+    shopcart
+  },
+  computed: {
+    selectFoods () {
+      const foods = []
+      this.goods.forEach((good) => {
+        good.foods.forEach((food) => {
+          if (food.count) {
+            foods.push(food)
+          }
+        })
+      })
+      return foods
+    }
   }
 }
 </script>
 
 <style lang='less'>
+::-webkit-scrollbar {
+/*隐藏滚轮*/
+display: none;
+}
 .goodsbox {
   display: flex;
   position: absolute;
