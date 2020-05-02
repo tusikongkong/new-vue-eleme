@@ -44,8 +44,7 @@
                   <span v-show='food.oldPrice' class='old'>￥{{food.oldPrice}}</span>
                 </div>
                 <div class="control-wrapper">
-                  <div class="control">
-                  </div>
+                  <control :food='food'></control>
                 </div>
               </div>
             </li>
@@ -59,6 +58,8 @@
 </template>
 
 <script>
+import control from '../control/control.vue'
+
 export default {
   props: {
     goods: {
@@ -68,13 +69,16 @@ export default {
   data () {
     return {
       scrollOptions: {
-        click: false,
+        // click: false,
         directionLockThreshold: 0
       }
     }
   },
   created () {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
+  },
+  components: {
+    control
   }
 }
 </script>
@@ -176,6 +180,11 @@ export default {
             font-size: 10px;
             color: #93999f;
           }
+        }
+        .control-wrapper {
+          position: absolute;
+          right: 0;
+          bottom: 12px
         }
       }
     }
