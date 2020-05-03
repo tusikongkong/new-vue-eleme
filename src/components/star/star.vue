@@ -1,5 +1,5 @@
 <template>
-  <div class="starbox">
+  <div class="starbox" :class='starType'>
     <span v-for='(itemClass,index) in itemClasses'
     :class='itemClass'
     class='star-item'
@@ -14,6 +14,9 @@ export default {
   props: {
     score: {
       type: Number
+    },
+    size: {
+      type: Number
     }
   },
   computed: {
@@ -27,13 +30,17 @@ export default {
         result.push('star-off')
       }
       return result
+    },
+    starType () {
+      return 'star-' + this.size
     }
   }
 }
 </script>
 
 <style lang='less' scoped>
-.starbox {
+
+.star-24 {
   .star-item {
     display: inline-block;
     background-repeat: no-repeat;
@@ -42,11 +49,22 @@ export default {
     margin-right: 22px;
     background-size: 20px 20px;
   }
-  .star-on {
-    background-image: url('star_on@2x.png');
-  }
-  .star-off {
-    background-image: url('star_off@2x.png');
+}
+.star-36 {
+  .star-item {
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+    background-size: 15px 15px;
   }
 }
+.star-on {
+  background-image: url('star_on@2x.png');
+}
+.star-off {
+  background-image: url('star_off@2x.png');
+}
+
 </style>

@@ -39,7 +39,7 @@
       <div class="dialog-content">
         <h1 class='h1-name'>{{seller.name}}</h1>
         <div class='star-wrapper'>
-          <star :score="seller.score"></star>
+          <star :size='24' :score="seller.score"></star>
         </div>
         <div class="title">
           <div class="line"></div>

@@ -24,7 +24,7 @@
     <div class="shop-wrapper" v-show='!fold'>
         <div class="list-header">
             <h1 class="title">购物车</h1>
-            <span class="empty">清空</span>
+            <span class="empty" @click='empty'>清空</span>
         </div>
         <div class="list-content">
         <ul>
@@ -100,6 +100,11 @@ export default {
       } else {
         this.fold = !this.fold
       }
+    },
+    empty () {
+      this.selectFoods.forEach((food) => {
+        food.count = 0
+      })
     }
   },
   components: {
