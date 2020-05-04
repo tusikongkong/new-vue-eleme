@@ -1,7 +1,7 @@
 <template>
   <div class="goodsbox">
     <cube-scroll-nav
-    :side=true
+    :side='true'
     :data='goods'
     :options='scrollOptions'
     v-if='goods.length'>
@@ -25,7 +25,7 @@
     </div> -->
     <div class="foods-wrapper">
       <ul>
-        <li v-for='(good,index) in goods' :key='index' class='food-list'>
+        <li v-for='food in good.foods' :key='food.name' class='food-list'>
           <!-- <h1 class="title">{{good.name}}</h1> -->
           <ul>
             <li v-for='(food,cindex) in good.foods' :key='cindex' class='food-item'>

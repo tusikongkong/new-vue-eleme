@@ -44,10 +44,10 @@ export default {
   .star-item {
     display: inline-block;
     background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-    margin-right: 22px;
-    background-size: 20px 20px;
+    width: 10px;
+    height: 10px;
+    margin-right: 3px;
+    background-size: 10px 10px;
   }
 }
 .star-36 {
@@ -58,6 +58,16 @@ export default {
     height: 15px;
     margin-right: 6px;
     background-size: 15px 15px;
+  }
+}
+.star-48 {
+  .star-item {
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-right: 22px;
+    background-size: 20px 20px;
   }
 }
 .star-on {
