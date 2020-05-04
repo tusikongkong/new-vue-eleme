@@ -116,101 +116,107 @@ display: none;
   top: 178px;
   bottom: 46px;
   width: 100%;
-  .cube-scroll-nav-bar {
-    overflow: scroll;
-    flex: 0 0 80px;
-    width: 88px;
-    background-color: #f3f5f7;
-    .cube-scroll-nav-bar-item {
-      display: table;
-      height: 54px;
-      width: 56px;
-      line-height: 14px;
-      border-bottom: 1px solid rgba(7,17,27,0.1);
-      padding: 0;
-      .icon {
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        background-size: 12px 12px;
-        background-repeat: no-repeat;
-        vertical-align: top;
-      }
-      span {
-        display: table-cell;
-        width: 56px;
-        vertical-align: middle;
-        font-size: 12px;
-        text-align: left;
-      }
-    }
-  }
-  .foods-wrapper {
-    overflow: scroll;
-    flex: 1;
-    .title {
-      padding-left: 14px;
-      height: 26px;
-      line-height: 26px;
-      border-left: 2px solid #d9dde1;
-      font-size: 12px;
-      color: rgb(147,153,159);
+  .cube-scroll-nav {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    .cube-scroll-nav-bar {
+      overflow: scroll;
+      flex: 0 0 80px;
+      width: 88px;
       background-color: #f3f5f7;
-    }
-    .food-item {
-      display: flex;
-      margin: 18px;
-      border-bottom: 1px solid rgba(7,17,27,0.1);
-      padding-bottom: 18px;
-      position: relative;
-      .foodicon {
-        flex: 0 0 57px;
-        margin-right: 10px;
-        .foodimg {
-          width:57px;
-          height: 57px;
+      .cube-scroll-nav-bar-item {
+        display: table;
+        height: 54px;
+        width: 56px;
+        line-height: 14px;
+        border-bottom: 1px solid rgba(7,17,27,0.1);
+        padding: 0;
+        .icon {
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          background-size: 12px 12px;
+          background-repeat: no-repeat;
+          vertical-align: top;
+        }
+        span {
+          display: table-cell;
+          width: 56px;
+          vertical-align: middle;
+          font-size: 12px;
+          text-align: left;
         }
       }
-      .content {
-        flex:1;
-        .name {
-          margin: 2px 0 8px;
-          height: 14px;
-          line-height: 14px;
-          font-size: 14px;
-        }
-        .desc {
-          line-height: 12px;
-          margin-bottom: 8px;
-          font-size: 10px;
-          color: #93999f;
-        }
-        .extra {
-          line-height: 10px;
-          font-size: 10px;
-          color: #93999f;
-          .count {
-            margin-right: 12px;
+    }
+    .foods-wrapper {
+      overflow: scroll;
+      flex: 1;
+      .title {
+        padding-left: 14px;
+        height: 26px;
+        line-height: 26px;
+        border-left: 2px solid #d9dde1;
+        font-size: 12px;
+        color: rgb(147,153,159);
+        background-color: #f3f5f7;
+      }
+      .food-item {
+        display: flex;
+        margin: 18px;
+        border-bottom: 1px solid rgba(7,17,27,0.1);
+        padding-bottom: 18px;
+        position: relative;
+        .foodicon {
+          flex: 0 0 57px;
+          margin-right: 10px;
+          .foodimg {
+            width:57px;
+            height: 57px;
           }
         }
-        .price {
-          font-weight: 700;
-          line-height: 24px;
-          .now {
-            margin-right: 8px;
+        .content {
+          flex:1;
+          .name {
+            margin: 2px 0 8px;
+            height: 14px;
+            line-height: 14px;
             font-size: 14px;
-            color: #f01414;
           }
-          .old {
-            text-decoration: line-through;
+          .desc {
+            line-height: 12px;
+            margin-bottom: 8px;
             font-size: 10px;
             color: #93999f;
           }
-        }
-        .control-wrapper {
-          position: absolute;
-          right: 0;
-          bottom: 12px
+          .extra {
+            line-height: 10px;
+            font-size: 10px;
+            color: #93999f;
+            .count {
+              margin-right: 12px;
+            }
+          }
+          .price {
+            font-weight: 700;
+            line-height: 24px;
+            .now {
+              margin-right: 8px;
+              font-size: 14px;
+              color: #f01414;
+            }
+            .old {
+              text-decoration: line-through;
+              font-size: 10px;
+              color: #93999f;
+            }
+          }
+          .control-wrapper {
+            position: absolute;
+            right: 0;
+            bottom: 12px
+          }
         }
       }
     }
