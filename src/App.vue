@@ -3,7 +3,7 @@
     <headerbox :seller='seller'></headerbox>
     <div class="router-wrapper">
       <div class="routerbox1">
-        <router-link to='/goods' >商品 </router-link>
+        <router-link to='/goods' >商品</router-link>
       </div>
       <div class="routerbox2">
         <router-link to='/ratings'>评论</router-link>
