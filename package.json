@@ -10,7 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "cube-ui": "~1.12.15",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "moment": "^2.25.2",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
